@@ -14,10 +14,14 @@ fileInput.addEventListener("change", function () {
   reader.readAsDataURL(file);
 });
 
-function addItem(listElem, text) {
+function addItem(listElem) {
   var recipeCardEl = document.createElement("div")
   recipeCardEl.className = "recipes"
 
+  var deleteBtn = document.createElement("button");
+    deleteBtn.innerHTML = "Delete";
+    deleteBtn.className = "delete-btn";
+    
   var li = document.createElement('h1');
   var textNode = document.createTextNode(titleEl.value);
   li.appendChild(textNode)
@@ -33,27 +37,34 @@ function addItem(listElem, text) {
     recipeImg.src = recipeSrc;
   }
 
-  var deleteBtn = document.createElement("button");
-  deleteBtn.innerHTML = "Delete";
-  deleteBtn.className = "delete-btn";
+  
+  if (reader && reader.result) { 
+    var recipeImg = document.createElement("img")
+    var recipeSrc = reader.result;
+    recipeImg.src = recipeSrc;
+  } else {
+    var recipeImg = document.createElement("img");
+  }
+
+  
 
   deleteBtn.addEventListener("click", function() {
   recipeCardEl.remove();
   });
-  listElem.appendChild(recipeCardEl).append(li, recipeText, reader.result?recipeImg:null, deleteBtn);
+  listElem.appendChild(recipeCardEl).append(li, recipeText, recipeImg, deleteBtn);
 }
 
 const recipeBtnEl = document.getElementById('recipeBtn')
 
 function showAlert() {
-  if(titleEl.value.trim().length<=0 || recipes.value.trim().length<=0) {
-    alert("Fill up all form")
+  if(titleEl.value.trim().length<=0 || recipes.value.trim().length<=0 || !reader || !reader.result ) {
+    alert("It seems like you didn't fill out everything. Please check it.")
   }
 }
 
 recipeBtnEl.addEventListener('click', function(event) {
   showAlert();
-  if(titleEl.value.trim().length> 0 && recipes.value.trim().length> 0 ) {
+  if(titleEl.value.trim().length> 0 && recipes.value.trim().length> 0 && reader && reader.result) {
   addItem(ulEl)
   fileInput.value = ""
   titleEl.value = ""
@@ -61,6 +72,7 @@ recipeBtnEl.addEventListener('click', function(event) {
   reader = null
   }
 })
+
 
 const searchBar = document.getElementById('searchbar');
 

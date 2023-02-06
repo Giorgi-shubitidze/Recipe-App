@@ -216,14 +216,17 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 
 .delete-btn {
-    position: relative;
+    position: absolute;
+    top: 10px;
+    right: 20px;
     cursor: pointer;
-    color: white;
+    color: black;
+    font-weight: bold;
     width: 70px;
     height: 25px;
     top: 18px;
     align-self: center;
-    background-color: #058833;
+    background-color: white;
     border: 0;
-    border-radius: 0px 0px 10px 10px;
+    border-radius:10px;
 }
