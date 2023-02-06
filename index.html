@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <h1 class="title">Recipe App</h1>
+        <p>What Recipe you want to save today?</p>
+    </nav>
+    
+    <main>
+        <div class="search-bar">
+            <input 
+                type="search" 
+                class="search" 
+                id="searchbar" 
+                name="search"
+                placeholder="Search Your favorite food.."
+            >
+            <img src="loupe.png" alt="" width="30px">
+        </div>
+        <div class="card-creator" id="card-creator">
+            <h1 class="card-title">title</h1>
+            <input type="text" class="card-title-input" id="title">
+            <h1 class="card-title" style="font-size: 18px;">Add New Recipe</h1>
+            <textarea id="recipes"></textarea>
+            <form action="/action_page.php" class="card-image">
+                <label for="img" style="color: white;">Select image:</label>
+                <input type="file" id="fileInput" name="img" accept="image/*" >
+              </form> 
+        </div>
+        <Button class="addRecipe" id="recipeBtn">Add Recipe</Button>
+        <ul id="ul"></ul>
+    
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
