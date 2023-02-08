@@ -196,8 +196,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     top: 27px;
     right: 10px;
     width: 300px;
-    height: 200px;
+    min-height: 200px;
     padding: 5px;
+    overflow-y: scroll;
     word-wrap: break-word;
     text-indent: 50px;
     text-align: justify;
@@ -205,7 +206,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 }
 
 #ul div img {
-    position: relative;
+    position: absolute;
     bottom: 20px;
     left: 17px;
     border-radius: 10px;
