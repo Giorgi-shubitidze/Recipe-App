@@ -193,10 +193,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     position: relative;
     margin: 2px;
     align-self: flex-end;
-    top: 27px;
-    right: 10px;
+    top: 30px;
+    right: 15px;
     width: 300px;
-    min-height: 200px;
+    max-height: 200px;
     padding: 5px;
     overflow-y: scroll;
     word-wrap: break-word;
