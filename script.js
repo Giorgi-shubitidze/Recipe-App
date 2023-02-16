@@ -26,7 +26,7 @@ function addItem(listElem) {
   var textNode = document.createTextNode(titleEl.value);
   li.appendChild(textNode)
 
-  var recipeText = document.createElement('p')
+  var recipeText = document.createElement('h4')
   var recipeNode = document.createTextNode(recipes.value)
   recipeText.appendChild(recipeNode)
 

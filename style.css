@@ -188,7 +188,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     white-space: nowrap;
 }
 
-#ul div p {
+#ul div h4 {
     cursor: default;
     position: relative;
     margin: 2px;
@@ -199,19 +199,16 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     max-height: 200px;
     padding: 5px;
     overflow-y: scroll;
-    word-wrap: break-word;
-    text-indent: 50px;
-    text-align: justify;
     letter-spacing: 3px;
 }
 
 #ul div img {
     position: absolute;
-    bottom: 20px;
+    bottom: 35px;
     left: 17px;
     border-radius: 10px;
     width: 300px;
-    max-width: 300px;
+    max-width: 280px;
     height: 200px;
 }
 
@@ -230,4 +227,39 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     background-color: white;
     border: 0;
     border-radius:10px;
+}
+
+
+@media screen and (max-width: 700px) {
+    #ul div {
+        height: 500px;
+        align-items: center;
+    }
+
+    #ul div h4 {
+        position: relative;
+        top: 280px;
+        align-self: center;
+        right: 0;
+        max-width: 300px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #ul div img {
+        padding: 5px;
+        top: 15px;
+        left: 0px;
+        max-width: 300px;
+        width: 100%;
+        position: relative;
+    }
+
+    .delete-btn {
+        font-size: 13px;
+        width: 60px;
+        top: 5px;
+        right: 5px;
+    }
 }
